@@ -5,7 +5,7 @@ void fun(string s1, string s2) {
 
 	// size_t represent size of an object
 	size_t found = s1.find(s2);
-	if(found != string::npos) {   // until the end of the string 
+	if(found != string::npos) {   // until the end of the string(Check if the position is -1 or not)
 		cout << "string found at: " << found << endl;
 	}
 	else {
