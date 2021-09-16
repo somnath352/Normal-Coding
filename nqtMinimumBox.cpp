@@ -2,6 +2,8 @@
 using namespace std;
 
 int minimumBox(int arr[], int n, int k) {
+	
+	sort(arr, arr+n);
 	int i = 0, j = n-1, cnt = 0;
 	while(i <= j) {
 		cnt++;
