@@ -3,7 +3,7 @@ using namespace std;
 
 int reverseNumber(int n) {
 	int ans = 0, rem;
-	
+	int temp = n;	
 	while(n > 0) {
 		rem = n%10;  // 6 3 1
 		n = n/10;    // 13 1 0
@@ -11,7 +11,10 @@ int reverseNumber(int n) {
 		
 	}
 	
-	return ans;
+	if(temp == ans)
+		return 1;
+	else
+		return 0;
 }
 
 int main() {
