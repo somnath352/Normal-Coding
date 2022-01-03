@@ -1,41 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-// T.C => n * (2**n)
-// S.C => O(n)
-
-void seq(int ind, vector<int> &ds, int arr[], int n) {
-	if(ind == n) {
-		for(auto &it : ds) {
-			cout << it << " ";
+void seq(int ind, vector<int>& ds, int n, int arr[]) {
+	if(ind==n) {
+		for(auto &it: ds) {
+			cout << it <<" ";
 		}
-
 		if(ds.size() == 0) {
 			cout << "{}";
 		}
 		cout << "\n";
 		return;
-
 	}
-
-
 	
-	// Not pick the element in the subsequence
-	seq(ind+1, ds, arr, n);
-
-	// pick the element in the subsequence
-    ds.push_back(arr[ind]);
-	seq(ind+1, ds, arr, n);
+	// pick up the element
+	ds.push_back(arr[ind]);
+	seq(ind+1, ds, n, arr);
 	ds.pop_back();
-	
+
+	// not pickup the element
+	seq(ind+1, ds, n, arr);
 }
 
 int main() {
-	int arr[] = {2,1,3};
-	int n = sizeof(arr) / sizeof(arr[0]);
+	int arr[] = {1,2,1};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	int sum = 2;
 	vector<int> ds;
-	seq(0, ds, arr, n);
-
-	return 0;
+	seq(0, ds, n, arr);
 }
