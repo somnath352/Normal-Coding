@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-string isPalindrome(string str) {
+bool isPalindrome(string str) {
 	int i = 0, j = str.size()-1;
-	while(i < j) {
-		if(str[i++] == str[j--])
-			return "YES";
+	while(i <= j) {
+		if(str[i++] != str[j--])
+			return false;
 	}
-	return "NO";
+	return true;
 }
 
 int main() {
