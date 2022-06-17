@@ -1,7 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// TC - O(2^n)
+// Stack Space - O(n)
+
 int seq(int ind, int s, int sum, int n, int arr[]) {
+	// if array element are positive then s exceed sum
 	if(s > sum) return 0;
 	if(ind==n) {
 		if(s==sum) return 1;
